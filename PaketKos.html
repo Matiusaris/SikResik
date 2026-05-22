@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Kamar Kos - SIKRESIK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="paket.css"> 
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link"> 
+            <div class="logo-container">
+                <img src="img/logo.png" alt="SIKRESIK Logo" class="main-logo">
+            </div>
+        </a>        
+        <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Other Services <i class="fas fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="paketRumah.html">Paket Rumah</a>
+                <a href="paketLainnya.html">Layanan Lainnya</a>
+            </div>
+        </li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfME7-sljnpf1GNPC3AVA4YAgaHmuLXqtE7ymSIqN4p06Tf2w/viewform" class="btn-cta" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a></li>
+    </ul>
+</nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="package-detail" style="margin-top: 100px; padding: 50px 8%;">
+        <h1 class="section-title" style="color: var(--primary-dark);">Paket Kamar Kos</h1>
+        <div class="package-grid">
+            <div class="package-desc">
+                <h3>Apa yang kami kerjakan?</h3>
+                <p>Layanan pembersihan menyeluruh untuk area kamar kos agar istirahatmu lebih maksimal.</p>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-circle"></i> Menyapu & Mengepel Lantai</li>
+                    <li><i class="fas fa-check-circle"></i> Membersihkan Debu Meja & Lemari</li>
+                    <li><i class="fas fa-check-circle"></i> Merapikan Tempat Tidur (Ganti Sprei)</li>
+                    <li><i class="fas fa-check-circle"></i> Membersihkan Kamar Mandi Dalam</li>
+                    <li><i class="fas fa-check-circle"></i> Membuang Sampah</li>
+                    <li><i class="fas fa-check-circle"></i> Melipat Baju</li>
+                    <li><i class="fas fa-check-circle"></i> Merapikan Meja Belajar</li>
+                </ul>
+                <div class="price-tag">Rp 60.000 <small>/ Jam</small></div>
+            </div>
+            
+            <div class="visual-comparison">
+                <h3>Bukti Nyata</h3>
+                <div class="comparison-container">
+                    <div class="ba-card">
+                        <img src="img/bedroom 1.jpeg" alt="Before">
+                        <span>Before</span>
+                    </div>
+                    <div class="ba-card">
+                        <img src="img/bedroom 2.jpeg" alt="After">
+                        <span>After</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cleaner-selection">
+    <h2 class="section-title">Pilih Cleaner Favoritmu</h2>
+    <div class="cleaner-grid">
+        <div class="cleaner-card" onclick="selectCleaner('Siti Rahma', 'img/images.png', '4.9', 'Spesialis Kamar Mandi')">
+            <img src="img/images.png" alt="Cleaner 1">
+            <h4>Siti Rahma</h4>
+            <p><i class="fas fa-star" style="color: var(--primary-yellow);"></i> 4.9</p>
+            <span class="badge">Spesialis Kamar Mandi</span>
+        </div>
+        
+        <div class="cleaner-card" onclick="selectCleaner('Budi Santoso', 'img/images.png', '4.8', 'Cepat & Rapi')">
+            <img src="img/images.png" alt="Cleaner 2">
+            <h4>Budi Santoso</h4>
+            <p><i class="fas fa-star" style="color: var(--primary-yellow);"></i> 4.8</p>
+            <span class="badge">Cepat & Rapi</span>
+        </div>
+    </div>
+</section>
+
+    <div class="container" id="booking-section" style="display: none; flex-direction: column; align-items: center;">
+    
+    <div class="cleaner-mini-profile" id="selected-cleaner-info" style="width: 100%; max-width: 900px;">
+    </div>
+
+    <div class="calendar-event-wrapper">
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <div class="nav-buttons">
+                    <button class="nav-btn" id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn" id="next-month"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="month-year" id="month-year">September 2025</div>
+            </div>
+            <div class="weekdays">
+                <div class="weekday">Sun</div><div class="weekday">Mon</div><div class="weekday">Tue</div>
+                <div class="weekday">Wed</div><div class="weekday">Thu</div><div class="weekday">Fri</div>
+                <div class="weekday">Sat</div>
+            </div>
+            <div class="days" id="days"></div>
+                <div class="calendar-footer">
+                <button class="today-btn" id="today-btn"><i class="fas fa-calendar-day"></i> Today</button>
+                    <div class="event-indicator">
+                    <i class="fas fa-circle" style="color: var(--accent); font-size: 0.6rem;"></i>
+                    <span>Has events</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-panel" id="event-panel">
+                <div class="event-header">
+                <div class="event-date" id="event-date">Select a date</div>
+                <i class="fas fa-calendar-alt event-icon"></i>
+                </div>
+                <div class="event-list" id="event-list">
+                <div class="no-events">Select a date with events to view them here</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+
+    <footer>
+        <div class="logo-text" style="color: white; margin-bottom: 10px; display: block;">SIKRESIK</div>
+        <p>&copy; 2024 Sikresik Indonesia. All Rights Reserved.</p>
+        <p>Created by Aris & Team.</p>
+    </footer>
+
+</body>
+</html>
